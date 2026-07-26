@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Planes & Tarifas | MEVAK FITNESS</title>
+  <title>MEVAK FITNESS | Juan Gabriel Ortega</title>
   <link rel="icon" type="image/png" href="https://i.postimg.cc/kXt3p3tP/MEVAKLOGO3.png">
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- En el <head> de index.html agregar Cropper.js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+
 </head>
 <body class="bg-zinc-950 text-zinc-100 font-sans antialiased selection:bg-orange-500 selection:text-black">
 
@@ -16,103 +21,431 @@
         <img src="https://i.postimg.cc/KvgSHSgy/MEVAKLOGO1.png" alt="MEVAK" class="h-10 w-auto">
       </a>
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="index.html" class="hover:text-orange-400 transition-colors">Inicio</a>
-        <a href="planes.html" class="text-orange-500 transition-colors">Planes y Tarifas</a>
-        <a href="inscripcion.html" class="hover:text-orange-400 transition-colors">Contacto / Inscripción</a>
+        <a href="index.html" class="text-orange-500 transition-colors">Inicio</a>
+        <a href="#sobre-nosotros" class="hover:text-orange-400 transition-colors">Sobre Nosotros</a>
+        <a href="#origen" class="hover:text-orange-400 transition-colors">El Origen</a>
+        <a href="planes.html" class="hover:text-orange-400 transition-colors">Planes y Tarifas</a>
+        <a href="#faq" class="hover:text-orange-400 transition-colors">Preguntas Frecuentes</a>
       </nav>
       <a href="inscripcion.html" class="bg-orange-500 hover:bg-orange-600 text-black font-bold px-5 py-2.5 rounded-xl text-sm transition-all shadow-lg shadow-orange-500/20">
-        Inscribirse
+        Únete Ahora
       </a>
     </div>
   </header>
 
-  <!-- SECCIÓN DE PLANES -->
-  <section class="py-20 text-white">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Opciones Flexibles</span>
-        <h1 class="text-4xl lg:text-5xl font-black">Nuestras Opciones de Precios</h1>
-        <p class="text-zinc-400 text-sm md:text-base">
-          De manera presencial hay un <strong class="text-white">cupo de hasta 5 personas por turno</strong> para asegurar máxima calidad.
+  <!-- BANNER SUPERIOR CON IMAGEN DE CABECERA -->
+  <section class="relative w-full h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden border-b border-zinc-800">
+    <!-- Imagen de Fondo -->
+    <img src="https://i.postimg.cc/SQVQLhbj/Stitch-Preview-(26-07-2026-01-52)-png-202607260156.jpg" 
+         alt="MEVAK Cover" 
+         class="absolute inset-0 w-full h-full object-cover object-center">
+    
+    <!-- Superposición oscura para legibilidad del texto -->
+    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 to-zinc-950/40"></div>
+
+    <!-- Contenido sobre la Imagen -->
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center space-y-4">
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-white drop-shadow-md">
+        TRANSFORMA TU <span class="text-orange-500">POTENCIAL</span>
+      </h1>
+      <p class="text-base sm:text-xl md:text-2xl text-zinc-200 font-medium max-w-3xl mx-auto leading-relaxed drop-shadow">
+        Programas de entrenamientos diseñados para la precisión técnica y la motivación atlética pura.
+      </p>
+    </div>
+  </section>
+
+  <!-- HERO SECTION -->
+  <section class="relative py-20 overflow-hidden border-b border-zinc-800">
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 space-y-6">
+        <span class="inline-block bg-orange-500/10 border border-orange-500/30 text-orange-400 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+          Entrenamiento Híbrido & Alto Rendimiento
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+          Desarrolla un físico <span class="text-orange-500">fuerte, funcional</span> y preparado.
+        </h2>
+        <p class="text-lg text-zinc-400 max-w-2xl">
+          Construye disciplina, potencia tu rendimiento y transforma tu estilo de vida con la guía personalizada de Juan Gabriel Ortega.
         </p>
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <a href="inscripcion.html" class="bg-orange-500 hover:bg-orange-600 text-black font-bold px-8 py-4 rounded-xl text-center transition-all shadow-xl shadow-orange-500/20">
+            Reserva tu Consulta Gratuita
+          </a>
+          <a href="planes.html" class="border border-zinc-700 hover:border-zinc-500 text-zinc-300 font-bold px-8 py-4 rounded-xl text-center transition-all">
+            Ver Planes y Precios
+          </a>
+        </div>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- PLAN HÍBRIDO -->
-        <div class="bg-zinc-900 border-2 border-orange-500 rounded-3xl p-8 relative flex flex-col justify-between shadow-2xl">
-          <span class="absolute -top-3 right-6 bg-orange-500 text-black text-xs font-black uppercase px-3 py-1 rounded-full">Más Solicitado</span>
-          <div>
-            <h3 class="text-2xl font-bold mb-2">Entrenamiento HÍBRIDO</h3>
-            <p class="text-xs text-zinc-400 mb-6">Presencial u Online con máxima flexibilidad.</p>
-            
-            <div class="space-y-4 border-t border-b border-zinc-800 py-6 mb-6">
-              <div>
-                <p class="text-xs text-orange-400 uppercase font-bold">Presencial</p>
-                <p class="text-2xl font-extrabold">$45.000 <span class="text-xs text-zinc-400 font-normal">/ mes (5 días/sem)</span></p>
-                <p class="text-lg font-bold text-zinc-300">$40.000 <span class="text-xs text-zinc-400 font-normal">/ mes (3 días/sem)</span></p>
-              </div>
-              <div class="pt-2">
-                <p class="text-xs text-orange-400 uppercase font-bold">Online</p>
-                <p class="text-xl font-bold">$40.000 <span class="text-xs text-zinc-400 font-normal">/ mes (5 días/sem)</span></p>
-                <p class="text-base font-semibold text-zinc-300">$35.000 <span class="text-xs text-zinc-400 font-normal">/ mes (3 días/sem)</span></p>
-              </div>
-            </div>
+      <div class="lg:col-span-5 flex justify-center">
+        <div class="relative bg-zinc-900 border border-zinc-800 p-8 rounded-3xl shadow-2xl text-center space-y-6 max-w-sm">
+          <img src="https://i.postimg.cc/KvgSHSgy/MEVAKLOGO1.png" alt="MEVAK Fitness" class="h-28 mx-auto object-contain">
+          <div class="border-t border-zinc-800 pt-6">
+            <p class="text-xs text-orange-400 font-bold uppercase tracking-widest">Cupos Presenciales Limitados</p>
+            <p class="text-2xl font-black text-white mt-1">Máximo 5 personas</p>
+            <p class="text-xs text-zinc-500 mt-1">por turno para máxima atención técnica.</p>
           </div>
-          <a href="inscripcion.html?plan=hibrido" class="block text-center w-full py-3.5 bg-orange-500 hover:bg-orange-600 text-black font-bold rounded-xl transition-all">
-            Inscribirme en Híbrido
-          </a>
         </div>
-
-        <!-- PLAN AIRE LIBRE -->
-        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 flex flex-col justify-between hover:border-zinc-700 transition-all">
-          <div>
-            <h3 class="text-2xl font-bold mb-2">Al Aire Libre</h3>
-            <p class="text-xs text-zinc-400 mb-6">Entrenamiento dinámico en grupo en entornos abiertos.</p>
-            
-            <div class="space-y-4 border-t border-b border-zinc-800 py-6 mb-6">
-              <div>
-                <p class="text-xs text-orange-400 uppercase font-bold">5 Días a la Semana</p>
-                <p class="text-3xl font-extrabold">$30.000 <span class="text-xs text-zinc-400 font-normal">/ mes</span></p>
-              </div>
-              <div class="pt-2">
-                <p class="text-xs text-orange-400 uppercase font-bold">3 Días a la Semana</p>
-                <p class="text-2xl font-bold text-zinc-300">$25.000 <span class="text-xs text-zinc-400 font-normal">/ mes</span></p>
-              </div>
-            </div>
-          </div>
-          <a href="inscripcion.html?plan=airelibre" class="block text-center w-full py-3.5 bg-zinc-800 hover:bg-zinc-700 text-white font-bold rounded-xl transition-all">
-            Inscribirme en Aire Libre
-          </a>
-        </div>
-
-        <!-- PLAN 1 A 1 -->
-        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 flex flex-col justify-between hover:border-zinc-700 transition-all">
-          <div>
-            <h3 class="text-2xl font-bold mb-2">Entrenamiento 1 a 1</h3>
-            <p class="text-xs text-zinc-400 mb-6">Atención 100% exclusiva con Juan Gabriel Ortega.</p>
-            
-            <div class="bg-zinc-950 p-6 rounded-2xl border border-zinc-800 text-center my-6 space-y-2">
-              <p class="text-xs text-zinc-400">Atención directa para coordinar horarios específicos y cupos.</p>
-              <p class="text-lg font-bold text-orange-400">+54 9 380 455-6260</p>
-            </div>
-          </div>
-          <a href="https://wa.me/5493804556260?text=Hola%20Juan%20Gabriel,%20quiero%20consultar%20por%20el%20Entrenamiento%201%20a%201" target="_blank" class="block text-center w-full py-3.5 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl transition-all">
-            Consultar por WhatsApp
-          </a>
-        </div>
-
       </div>
     </div>
   </section>
+
+  <!-- SOBRE JUAN GABRIEL ORTEGA -->
+  <section id="sobre-nosotros" class="py-20 bg-zinc-950 text-white border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Entrenador y Creador</span>
+          <h2 class="text-3xl lg:text-5xl font-extrabold tracking-tight">
+            ¡Bienvenido a <span class="text-orange-500">MEVAK</span>!
+          </h2>
+          <p class="text-lg text-zinc-300 font-medium italic">
+            "Antes de comenzar este camino, quiero contarte un poco sobre quién soy, cómo entreno y qué podés esperar de este proceso."
+          </p>
+          <div class="space-y-4 text-zinc-400 text-sm lg:text-base leading-relaxed">
+            <p>
+              Soy <strong class="text-white">Juan Gabriel Ortega</strong>, ex competidor de culturismo, creador de contenido y entrenador especializado en entrenamiento híbrido. Llevo más de 15 años entrenando y mi objetivo es ayudarte a desarrollar un físico fuerte, funcional y preparado para cualquier desafío.
+            </p>
+            <p>
+              Mi camino comenzó a los 12 años, cuando descubrí la calistenia y empecé a entrenar por mi cuenta, aprendiendo mediante la práctica, el estudio y la experiencia. A los 16 años di el paso al entrenamiento con pesas y, a los 18, participé en mi primera competencia de culturismo. Me preparé de forma natural y logré el segundo puesto en un campeonato sudamericano, una experiencia que marcó mi forma de entender el entrenamiento.
+            </p>
+            <p>
+              Con el paso de los años seguí capacitándome y ampliando mi visión. Me formé en disciplinas como Groundwork, Artemisio y otras orientadas a la movilidad, la flexibilidad y el control motor. Esa evolución me permitió comprender que un cuerpo no solo debe verse bien, sino también moverse bien, ser fuerte y rendir al máximo.
+            </p>
+            <p>
+              Hoy transformé esa pasión en mi profesión. Mi compromiso es acompañarte con entrenamientos planificados, seguimiento constante y las herramientas necesarias para que puedas progresar de manera segura, sostenible y adaptada a tus objetivos.
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-zinc-900 border border-zinc-800 rounded-3xl p-8 relative shadow-2xl space-y-6">
+          <h3 class="text-xl font-bold text-white flex items-center gap-2">
+            <span class="w-3 h-3 bg-orange-500 rounded-full inline-block"></span> 
+            El Enfoque MEVAK
+          </h3>
+          <p class="text-zinc-300 text-sm leading-relaxed">
+            A través del entrenamiento híbrido vas a desarrollar fuerza, mejorar tu capacidad aeróbica, aumentar tu movilidad, aprender nuevas habilidades y construir hábitos que te permitan mantener resultados a largo plazo.
+          </p>
+          <blockquote class="bg-zinc-950 p-5 rounded-2xl border-l-4 border-orange-500 text-zinc-400 text-xs italic">
+            "Mi objetivo no es solo ayudarte a cambiar tu físico, sino también enseñarte a entrenar de forma inteligente para que disfrutes del proceso y puedas sostener ese estilo de vida en el tiempo."
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL ORIGEN DE MEVAK -->
+  <section id="origen" class="py-20 bg-zinc-900/50 text-white border-b border-zinc-800">
+    <div class="max-w-5xl mx-auto px-6 space-y-8 text-center">
+      <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Nuestra Filosofía</span>
+      <h2 class="text-3xl lg:text-5xl font-black">El origen de MEVAK</h2>
+      <p class="text-xl text-orange-400 font-medium italic">
+        "MEVAK nació de una idea simple: aprender a disfrutar las pequeñas cosas de la vida."
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left text-zinc-300 text-sm leading-relaxed pt-4">
+        <div class="bg-zinc-950 p-6 rounded-2xl border border-zinc-800 space-y-4">
+          <h4 class="text-lg font-bold text-white">Disciplina y Resiliencia</h4>
+          <p>
+            Con el paso de los años entendí que entrenar va mucho más allá de cambiar el cuerpo. El entrenamiento me enseñó disciplina, paciencia, constancia y resiliencia. Me hizo comprender que los grandes resultados no aparecen de un día para otro, sino que son la consecuencia de pequeñas acciones repetidas con compromiso.
+          </p>
+          <p>
+            Quise crear un método donde las personas no solo aprendan a entrenar, sino que también comprendan el porqué de cada decisión, desarrollen hábitos saludables y disfruten del proceso de superarse día a día.
+          </p>
+        </div>
+
+        <div class="bg-zinc-950 p-6 rounded-2xl border border-zinc-800 space-y-4">
+          <h4 class="text-lg font-bold text-white">Comunidad & Crecimiento</h4>
+          <p>
+            Creo que la paciencia se construye, que la disciplina se practica y que el verdadero cambio ocurre cuando dejamos de buscar resultados inmediatos para empezar a valorar cada pequeño avance.
+          </p>
+          <p>
+            Lo que comenzó como una idea terminó convirtiéndose en una comunidad donde personas de diferentes edades, objetivos y niveles encuentran un espacio para aprender, desafiarse y crecer juntas.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-r from-orange-600 to-orange-500 p-8 rounded-2xl text-black font-extrabold text-lg md:text-xl shadow-xl">
+        "MEVAK no se trata únicamente de entrenar. Se trata de construir una versión de vos mismo de la que puedas sentirte orgulloso."
+      </div>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS FRECUENTES (FAQ) -->
+  <section id="faq" class="py-20 bg-zinc-950 text-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Resuelve tus Dudas</span>
+        <h2 class="text-3xl font-extrabold mt-2">Preguntas Frecuentes</h2>
+      </div>
+
+      <div class="space-y-6">
+        <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 space-y-3">
+          <h3 class="text-lg font-bold text-orange-400">1. ¿Cómo me apunto?</h3>
+          <p class="text-zinc-300 text-sm leading-relaxed">
+            Empezar es fácil. Antes de tu primera clase, pedimos a todos los nuevos miembros que reserven una llamada de consulta gratuita de 10 minutos. Es una oportunidad para conocer mejor tus objetivos, responder cualquier pregunta y asegurarnos de que empiezas en la modalidad adecuada.
+          </p>
+          <a href="inscripcion.html" class="inline-block text-orange-500 text-sm font-bold hover:underline">Ir al formulario de consulta &rarr;</a>
+        </div>
+
+        <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 space-y-3">
+          <h3 class="text-lg font-bold text-orange-400">2. ¿Cuáles son los cupos y la modalidad?</h3>
+          <p class="text-zinc-300 text-sm leading-relaxed">
+            De manera presencial manejamos un cupo reducido de hasta 5 personas por turno para garantizar atención personalizada.
+          </p>
+        </div>
+
+        <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 space-y-3">
+          <h3 class="text-lg font-bold text-orange-400">3. ¿Es adecuado para principiantes o avanzados?</h3>
+          <p class="text-zinc-300 text-sm leading-relaxed">
+            Por supuesto. Damos la bienvenida a personas de todas las edades y niveles. Todas nuestras clases están dirigidas por un coach que adaptará los ejercicios, cargas y movimientos a tu condición física actual.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+<!-- SECCIÓN DE OPINIONES DE ALUMNOS (CARRUSEL) -->
+  <section class="py-20 bg-zinc-900/40 border-b border-zinc-800 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Comunidad MEVAK</span>
+          <h2 class="text-3xl lg:text-5xl font-black text-white mt-1">Lo que opinan nuestros atletas</h2>
+        </div>
+        <button onclick="document.getElementById('modalOpinion').classList.remove('hidden')" 
+          class="bg-orange-500 hover:bg-orange-600 text-black font-bold px-6 py-3 rounded-xl transition-all shadow-lg shadow-orange-500/20 text-sm self-start md:self-auto">
+          + Dejar mi Opinión
+        </button>
+      </div>
+
+      <!-- Carrusel Contenedor -->
+      <div class="relative">
+        <div id="carruselOpiniones" class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-6 no-scrollbar">
+          <!-- Las tarjetas se cargarán dinámicamente desde Google Sheets -->
+          <div class="min-w-[300px] md:min-w-[380px] bg-zinc-900 border border-zinc-800 p-6 rounded-2xl animate-pulse">
+            <p class="text-zinc-500 text-sm">Cargando testimonios...</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+<!-- MODAL FORMULARIO DE OPINIÓN CON RECORTE DE FOTO -->
+  <div id="modalOpinion" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-zinc-900 border border-zinc-800 w-full max-w-lg rounded-3xl p-6 sm:p-8 relative my-8">
+      
+      <button onclick="cerrarModal()" class="absolute top-5 right-5 text-zinc-400 hover:text-white text-xl font-bold">&times;</button>
+
+      <h3 class="text-2xl font-black text-white mb-2">Cuéntanos tu experiencia</h3>
+      <p class="text-zinc-400 text-xs mb-6">Tu testimonio nos ayuda a seguir mejorando y motivando a más atletas.</p>
+
+      <form id="formOpinion" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase text-zinc-400 mb-1">Nombre y Apellido</label>
+          <input type="text" id="opNombre" required placeholder="Ej: Mateo Rodríguez" 
+            class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-orange-500">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase text-zinc-400 mb-1">Calificación</label>
+          <select id="opEstrellas" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-orange-400 text-sm focus:outline-none focus:border-orange-500">
+            <option value="5">★★★★★ (5/5)</option>
+            <option value="4">★★★★☆ (4/5)</option>
+            <option value="3">★★★☆☆ (3/5)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase text-zinc-400 mb-1">Tu Comentario</label>
+          <textarea id="opComentario" rows="3" required placeholder="¿Qué cambios has notado desde que entrenas con Juan Gabriel?" 
+            class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-orange-500"></textarea>
+        </div>
+
+        <!-- Selector de Foto -->
+        <div>
+          <label class="block text-xs font-bold uppercase text-zinc-400 mb-1">Foto de Perfil</label>
+          <input type="file" id="inputFoto" accept="image/*" class="text-xs text-zinc-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:bg-zinc-800 file:text-orange-400 hover:file:bg-zinc-700">
+        </div>
+
+        <!-- Previsualizador y Recorte de Foto en Círculo -->
+        <div id="contenedorCropper" class="hidden space-y-2">
+          <p class="text-xs text-orange-400 font-semibold">Ajusta tu foto dentro del círculo:</p>
+          <div class="max-h-60 overflow-hidden rounded-xl bg-zinc-950">
+            <img id="imageToCrop" class="max-w-full">
+          </div>
+        </div>
+
+        <button type="submit" id="btnEnviarOpinion" 
+          class="w-full bg-orange-500 hover:bg-orange-600 text-black font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-orange-500/20 text-sm mt-4">
+          Publicar Opinión
+        </button>
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
   <!-- FOOTER -->
   <footer class="bg-zinc-950 border-t border-zinc-800 py-12 text-zinc-500 text-sm text-center">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
       <img src="https://i.postimg.cc/TYWM4MWM/MEVAK2.png" alt="MEVAK" class="h-10 w-auto">
-      <p>© 2026 MEVAK FITNESS - La Rioja, Argentina.</p>
+      <p>© 2026 MEVAK FITNESS - La Rioja, Argentina. Todos los derechos reservados.</p>
+      <a href="https://wa.me/5493804556260" target="_blank" class="text-orange-400 hover:underline">WhatsApp: +54 9 380 455-6260</a>
     </div>
   </footer>
+
+
+
+<!-- SCRIPT CARRUSEL Y PROCESAMIENTO DE FOTO -->
+  <script>
+    const APPS_SCRIPT_OPINIONES_URL = "https://script.google.com/macros/s/AKfycbwJA-Zjpey4REC1JROPNQ7TFU6VZoe4vM72dxQqsyspHggeXwr3YwWI-a5Z1M1St8Lc/exec";
+    let cropper = null;
+
+    // Cargar opiniones al iniciar
+    document.addEventListener("DOMContentLoaded", cargarOpiniones);
+
+    function cargarOpiniones() {
+      const contenedor = document.getElementById("carruselOpiniones");
+      fetch(APPS_SCRIPT_OPINIONES_URL)
+        .then(res => res.json())
+        .then(data => {
+          if(!data || data.length === 0) {
+            contenedor.innerHTML = `<p class="text-zinc-500 text-sm">Sé el primero en dejar una opinión.</p>`;
+            return;
+          }
+          
+          contenedor.innerHTML = data.map(op => `
+            <div class="min-w-[300px] md:min-w-[360px] bg-zinc-900 border border-zinc-800/80 p-6 rounded-2xl snap-start flex flex-col justify-between space-y-4">
+              <div class="space-y-3">
+                <div class="text-orange-500 text-sm">${'★'.repeat(op.estrellas)}${'☆'.repeat(5 - op.estrellas)}</div>
+                <p class="text-zinc-300 text-sm italic leading-relaxed">"${op.comentario}"</p>
+              </div>
+              <div class="flex items-center gap-3 pt-4 border-t border-zinc-800/60">
+                <img src="${op.foto}" alt="${op.nombre}" class="w-12 h-12 rounded-full object-cover border border-orange-500/40">
+                <div>
+                  <h4 class="text-white text-sm font-bold">${op.nombre}</h4>
+                  <span class="text-xs text-zinc-500">Atleta MEVAK</span>
+                </div>
+              </div>
+            </div>
+          `).join('');
+        })
+        .catch(err => {
+          contenedor.innerHTML = `<p class="text-zinc-500 text-sm">No se pudieron cargar los testimonios.</p>`;
+        });
+    }
+
+    // Manejo del Recorte de la Imagen
+    const inputFoto = document.getElementById('inputFoto');
+    const imageToCrop = document.getElementById('imageToCrop');
+    const contenedorCropper = document.getElementById('contenedorCropper');
+
+    inputFoto.addEventListener('change', function(e) {
+      const files = e.target.files;
+      if (files && files.length > 0) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          imageToCrop.src = e.target.result;
+          contenedorCropper.classList.remove('hidden');
+          
+          if (cropper) cropper.destroy();
+          
+          cropper = new Cropper(imageToCrop, {
+            aspectRatio: 1, // Proporción cuadrada perfecta
+            viewMode: 1,
+            dragMode: 'move',
+            autoCropArea: 1,
+            cropBoxMovable: true,
+            cropBoxResizable: true,
+          });
+        };
+        reader.readAsDataURL(files[0]);
+      }
+    });
+
+    function cerrarModal() {
+      document.getElementById('modalOpinion').classList.add('hidden');
+      if (cropper) cropper.destroy();
+      contenedorCropper.classList.add('hidden');
+      document.getElementById('formOpinion').reset();
+    }
+
+    // Envío del Formulario
+    document.getElementById('formOpinion').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('btnEnviarOpinion');
+      btn.innerText = "Optimizando imagen y guardando...";
+      btn.disabled = true;
+
+      let fotoBase64 = "";
+
+      if (cropper) {
+        // Reducir calidad y dimensiones a 300x300 en un canvas circular
+        const canvas = cropper.getCroppedCanvas({ width: 300, height: 300 });
+        fotoBase64 = canvas.toDataURL('image/jpeg', 0.7); // Compresión al 70% calidad
+      }
+
+      const payload = {
+        nombre: document.getElementById('opNombre').value,
+        estrellas: document.getElementById('opEstrellas').value,
+        comentario: document.getElementById('opComentario').value,
+        fotoBase64: fotoBase64
+      };
+
+      fetch(APPS_SCRIPT_OPINIONES_URL, {
+        method: 'POST',
+        body: JSON.stringify(payload)
+      })
+      .then(res => res.json())
+      .then(res => {
+        alert("¡Gracias por tu opinión!");
+        cerrarModal();
+        cargarOpiniones();
+      })
+      .catch(err => {
+        alert("Opinión enviada exitosamente.");
+        cerrarModal();
+        cargarOpiniones();
+      })
+      .finally(() => {
+        btn.innerText = "Publicar Opinión";
+        btn.disabled = false;
+      });
+    });
+  </script>
+
+
+
+
+
+
+
+
 
 </body>
 </html>
