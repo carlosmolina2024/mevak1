@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscripción | MEVAK FITNESS</title>
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/kXt3p3tP/MEVAKLOGO3.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-sans antialiased">
+
+  <!-- NAVBAR -->
+  <header class="border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="index.html">
+        <img src="https://i.postimg.cc/KvgSHSgy/MEVAKLOGO1.png" alt="MEVAK" class="h-10 w-auto">
+      </a>
+      <a href="index.html" class="text-sm text-zinc-400 hover:text-white">&larr; Volver al Inicio</a>
+    </div>
+  </header>
+
+  <!-- FORMULARIO SECTION -->
+  <section class="py-16 px-6">
+    <div class="max-w-xl mx-auto bg-zinc-900 border border-zinc-800 p-8 sm:p-10 rounded-3xl shadow-2xl">
+      
+      <div class="text-center space-y-2 mb-8">
+        <h1 class="text-3xl font-black text-white">Reserva tu Consulta</h1>
+        <p class="text-zinc-400 text-sm">
+          Completa tus datos para coordinar la llamada gratuita de 10 minutos con Juan Gabriel Ortega.
+        </p>
+      </div>
+
+      <form id="formInscripcion" class="space-y-5">
+        <div>
+          <label class="block text-xs font-bold uppercase text-zinc-400 mb-2">Nombre Completo</label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Ej: Carlos Molina" 
+            class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase text-zinc-400 mb-2">Correo Electrónico</label>
+          <input type="email" id="email" name="email" required placeholder="tuemail@ejemplo.com" 
+            class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase text-zinc-400 mb-2">Teléfono / WhatsApp</label>
+          <input type="tel" id="telefono" name="telefono" required placeholder="+54 380 1234567" 
+            class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase text-zinc-400 mb-2">Plan de Interés</label>
+          <select id="plan" name="plan" required 
+            class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors">
+            <option value="Híbrido Presencial (5 días)">Híbrido Presencial - 5 Días ($45.000)</option>
+            <option value="Híbrido Presencial (3 días)">Híbrido Presencial - 3 Días ($40.000)</option>
+            <option value="Híbrido Online (5 días)">Híbrido Online - 5 Días ($40.000)</option>
+            <option value="Híbrido Online (3 días)">Híbrido Online - 3 Días ($35.000)</option>
+            <option value="Aire Libre (5 días)">Aire Libre - 5 Días ($30.000)</option>
+            <option value="Aire Libre (3 días)">Aire Libre - 3 Días ($25.000)</option>
+            <option value="Personalizado 1 a 1">Entrenamiento 1 a 1 (Consulta)</option>
+          </select>
+        </div>
+
+        <button type="submit" id="btnSubmit" 
+          class="w-full bg-orange-500 hover:bg-orange-600 text-black font-bold py-4 rounded-xl transition-all shadow-lg shadow-orange-500/20 text-center">
+          Enviar y Agendar Llamada
+        </button>
+      </form>
+
+      <div id="mensajeExito" class="hidden mt-6 p-4 bg-orange-500/10 border border-orange-500/30 text-orange-400 rounded-xl text-center text-sm font-semibold">
+        ¡Excelente! Tus datos fueron recibidos. Te contactaremos por WhatsApp en breve.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SCRIPT CONEXIÓN A GOOGLE SHEETS -->
+  <script>
+    const form = document.getElementById('formInscripcion');
+    const mensajeExito = document.getElementById('mensajeExito');
+    const btnSubmit = document.getElementById('btnSubmit');
+
+    // Reemplazar esta URL por la que obtengas al Desplegar como Web App en Apps Script
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxfKU1LrlB46ewCXd6soniJ6GRlx6EGwKfOGh4g_9ne5G8iENfIaUTejjf0VRSoJzg/exec';
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      btnSubmit.innerText = 'Enviando...';
+      btnSubmit.disabled = true;
+
+      const formData = new FormData(form);
+
+      fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        mensajeExito.classList.remove('hidden');
+        form.reset();
+        btnSubmit.innerText = 'Enviar y Agendar Llamada';
+        btnSubmit.disabled = false;
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        // Mostrar éxito aun si hay bloqueo CORS típico de Apps Script si los datos llegaron
+        mensajeExito.classList.remove('hidden');
+        btnSubmit.innerText = 'Enviar y Agendar Llamada';
+        btnSubmit.disabled = false;
+      });
+    });
+  </script>
+
+</body>
+</html>

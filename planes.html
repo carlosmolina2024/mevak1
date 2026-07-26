@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planes & Tarifas | MEVAK FITNESS</title>
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/kXt3p3tP/MEVAKLOGO3.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-sans antialiased selection:bg-orange-500 selection:text-black">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="https://i.postimg.cc/KvgSHSgy/MEVAKLOGO1.png" alt="MEVAK" class="h-10 w-auto">
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="index.html" class="hover:text-orange-400 transition-colors">Inicio</a>
+        <a href="planes.html" class="text-orange-500 transition-colors">Planes y Tarifas</a>
+        <a href="inscripcion.html" class="hover:text-orange-400 transition-colors">Contacto / Inscripción</a>
+      </nav>
+      <a href="inscripcion.html" class="bg-orange-500 hover:bg-orange-600 text-black font-bold px-5 py-2.5 rounded-xl text-sm transition-all shadow-lg shadow-orange-500/20">
+        Inscribirse
+      </a>
+    </div>
+  </header>
+
+  <!-- SECCIÓN DE PLANES -->
+  <section class="py-20 text-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Opciones Flexibles</span>
+        <h1 class="text-4xl lg:text-5xl font-black">Nuestras Opciones de Precios</h1>
+        <p class="text-zinc-400 text-sm md:text-base">
+          De manera presencial hay un <strong class="text-white">cupo de hasta 5 personas por turno</strong> para asegurar máxima calidad.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- PLAN HÍBRIDO -->
+        <div class="bg-zinc-900 border-2 border-orange-500 rounded-3xl p-8 relative flex flex-col justify-between shadow-2xl">
+          <span class="absolute -top-3 right-6 bg-orange-500 text-black text-xs font-black uppercase px-3 py-1 rounded-full">Más Solicitado</span>
+          <div>
+            <h3 class="text-2xl font-bold mb-2">Entrenamiento HÍBRIDO</h3>
+            <p class="text-xs text-zinc-400 mb-6">Presencial u Online con máxima flexibilidad.</p>
+            
+            <div class="space-y-4 border-t border-b border-zinc-800 py-6 mb-6">
+              <div>
+                <p class="text-xs text-orange-400 uppercase font-bold">Presencial</p>
+                <p class="text-2xl font-extrabold">$45.000 <span class="text-xs text-zinc-400 font-normal">/ mes (5 días/sem)</span></p>
+                <p class="text-lg font-bold text-zinc-300">$40.000 <span class="text-xs text-zinc-400 font-normal">/ mes (3 días/sem)</span></p>
+              </div>
+              <div class="pt-2">
+                <p class="text-xs text-orange-400 uppercase font-bold">Online</p>
+                <p class="text-xl font-bold">$40.000 <span class="text-xs text-zinc-400 font-normal">/ mes (5 días/sem)</span></p>
+                <p class="text-base font-semibold text-zinc-300">$35.000 <span class="text-xs text-zinc-400 font-normal">/ mes (3 días/sem)</span></p>
+              </div>
+            </div>
+          </div>
+          <a href="inscripcion.html?plan=hibrido" class="block text-center w-full py-3.5 bg-orange-500 hover:bg-orange-600 text-black font-bold rounded-xl transition-all">
+            Inscribirme en Híbrido
+          </a>
+        </div>
+
+        <!-- PLAN AIRE LIBRE -->
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 flex flex-col justify-between hover:border-zinc-700 transition-all">
+          <div>
+            <h3 class="text-2xl font-bold mb-2">Al Aire Libre</h3>
+            <p class="text-xs text-zinc-400 mb-6">Entrenamiento dinámico en grupo en entornos abiertos.</p>
+            
+            <div class="space-y-4 border-t border-b border-zinc-800 py-6 mb-6">
+              <div>
+                <p class="text-xs text-orange-400 uppercase font-bold">5 Días a la Semana</p>
+                <p class="text-3xl font-extrabold">$30.000 <span class="text-xs text-zinc-400 font-normal">/ mes</span></p>
+              </div>
+              <div class="pt-2">
+                <p class="text-xs text-orange-400 uppercase font-bold">3 Días a la Semana</p>
+                <p class="text-2xl font-bold text-zinc-300">$25.000 <span class="text-xs text-zinc-400 font-normal">/ mes</span></p>
+              </div>
+            </div>
+          </div>
+          <a href="inscripcion.html?plan=airelibre" class="block text-center w-full py-3.5 bg-zinc-800 hover:bg-zinc-700 text-white font-bold rounded-xl transition-all">
+            Inscribirme en Aire Libre
+          </a>
+        </div>
+
+        <!-- PLAN 1 A 1 -->
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 flex flex-col justify-between hover:border-zinc-700 transition-all">
+          <div>
+            <h3 class="text-2xl font-bold mb-2">Entrenamiento 1 a 1</h3>
+            <p class="text-xs text-zinc-400 mb-6">Atención 100% exclusiva con Juan Gabriel Ortega.</p>
+            
+            <div class="bg-zinc-950 p-6 rounded-2xl border border-zinc-800 text-center my-6 space-y-2">
+              <p class="text-xs text-zinc-400">Atención directa para coordinar horarios específicos y cupos.</p>
+              <p class="text-lg font-bold text-orange-400">+54 9 380 455-6260</p>
+            </div>
+          </div>
+          <a href="https://wa.me/5493804556260?text=Hola%20Juan%20Gabriel,%20quiero%20consultar%20por%20el%20Entrenamiento%201%20a%201" target="_blank" class="block text-center w-full py-3.5 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl transition-all">
+            Consultar por WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-zinc-950 border-t border-zinc-800 py-12 text-zinc-500 text-sm text-center">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <img src="https://i.postimg.cc/TYWM4MWM/MEVAK2.png" alt="MEVAK" class="h-10 w-auto">
+      <p>© 2026 MEVAK FITNESS - La Rioja, Argentina.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
